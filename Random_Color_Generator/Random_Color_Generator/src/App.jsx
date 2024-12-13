@@ -27,7 +27,22 @@ function App() {
         setRgbValue(`rgb(${r},${g},${b})`)
       }
     },[rgbValue])
-//
+    
+    const changeToRGB = () => {
+      if(hexEnabled){ 
+        setHexEnabled((prev) => !prev)
+      }
+      setType("rgb")
+      generateRandomColor()
+    }
+
+    const changeToHex = () => {
+      if(!hexEnabled){ 
+        setHexEnabled((prev) => !prev)
+      }
+        setType("hex")
+        generateRandomColor()
+    }
 
   return (
     <>
