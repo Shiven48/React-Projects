@@ -8,7 +8,7 @@ function App() {
     const[hexValue,setHexValue] = useState("#000000")
     const[type,setType] = useState("rgb")
 
-    const generateRandomColor = useCallback( () => {
+    const generateRandomColor = () => {
       const nums = "0123456789ABCDEF"
 
       if(hexEnabled) {
@@ -26,7 +26,7 @@ function App() {
         const b = Math.floor(Math.random() * 256)
         setRgbValue(`rgb(${r},${g},${b})`)
       }
-    },[rgbValue])
+    }
     
     const changeToRGB = () => {
       if(hexEnabled){ 
@@ -46,7 +46,7 @@ function App() {
 
   return (
     <>
-      <body className="bg-slate-800 h-screen">
+      <div className="bg-slate-800 h-screen">
         <div className="justify-items-center">
           <div className="text-center text-2xl text-yellow-400 py-8">
           Color Generator Project
@@ -79,7 +79,7 @@ function App() {
             </h3>
           </div>
         </div>
-      </body>
+      </div>
     </>
   )
 }
