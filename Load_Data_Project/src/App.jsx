@@ -1,11 +1,10 @@
-import { useState } from 'react'
+import Load_Data from './Components/Load_Data'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1 className='bg-black text-white'>Hello Boi</h1>
+      <Load_Data/>
     </>
   )
 }
