@@ -5,7 +5,9 @@ function App() {
 
   return (
     <>
-      <MenuList list={menus}/>
+    <div className="min-h-screen w-80 bg-[rgb(0,71,110)]">
+    <MenuList list={menus}/>
+    </div>
     </>
   )
 }
