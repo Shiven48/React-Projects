@@ -1,8 +1,11 @@
+import menus from "./Components/data.js" 
+import MenuList from "./Components/MenuList.jsx"
+
 function App() {
 
   return (
     <>
-      <h3 className="bg-black text-white">Hello</h3>
+      <MenuList list={menus}/>
     </>
   )
 }
