@@ -1,7 +1,9 @@
+import Scroll from "./Scroll"
+
 function App() {
   return (
     <>
-      <div className="bg-black text-white"> Hello </div>
+      <Scroll url="https://dummyjson.com/products?limit=100"/>
     </>
   )
 }
