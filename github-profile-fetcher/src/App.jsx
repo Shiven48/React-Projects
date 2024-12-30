@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react"
 import {
-  Input,
-  Button
+  TextField,
+  Button,
+  Divider
 } from "@mui/material"
+import CustomCard from "../Components/CustomCard"
 
 function App() {
 
   const [input, setInput] = useState('')
   const [userData, setUserData] = useState(null)
   const [loading, setLoading] = useState(false)
+  const [activateCustomCard, setActivateCustomCard] = useState(false)
 
   useEffect(() => {
     handleFetch()
@@ -31,33 +34,43 @@ function App() {
   }
 
   const getData = () => {
-    handleFetch()
+    handleFetch();
+    setActivateCustomCard(true)
   }
 
   if (loading) {
     <div> Loading profile! Please Wait... </div>
   }
 
-  console.log(userData)
-
   return (
-    <div id="container">
-      <div id="search-input-container">
-        <Input
-          name="text-input"
-          value={input}
-          type="text"
-          required
-          onChange={(e) => setInput(e.target.value)}
-        />
-      </div>
-      <div id="search-button-container">
-        <Button
-          onClick={getData}
-        > Search </Button>
-      </div>
-      <div id="profile-data-display">
-        {/* {For displaying data in this div using card} */}
+    <div id="search-input-container" className="justify-items-center mt-20"> 
+      <TextField 
+      className="bg-white rounded-md"
+        id="filled-hidden-label-small"
+        size="small"
+        placeholder="Enter Username"
+        name="text-input"
+        label="Filled" 
+        variant="filled"
+        value={input}
+        type="text"
+        required
+        onChange={(e) => setInput(e.target.value)}
+      /> 
+      <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+      <Button
+        style={{backgroundColor:"#39e75f",
+          marginBottom:"40px",
+          color:"black"
+        }}
+        onClick={getData}
+      > Search </Button>
+      <div id="data">
+        {
+          activateCustomCard ? 
+          <CustomCard profile={userData}/> :
+          null
+        }
       </div>
     </div>
   )
