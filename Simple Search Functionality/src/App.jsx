@@ -1,7 +1,9 @@
+import Search from "./Components/Search"
+
 function App() {
   return (
     <>
-      <div className="bg-black text-red-200">Hello Boi</div>
+      <Search/>
     </>
   )
 }
