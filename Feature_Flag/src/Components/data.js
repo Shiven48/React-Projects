@@ -1,14 +1,13 @@
-
 const ApiResponse = {
     QR: true,
-    Tabs: false,
+    Tabs: true,
     Theme: true
 };
 
 
 function FeatureFlagServiceCall(){
 
-    return Promise((resolve,reject) => {
+    return new Promise((resolve,reject) => {
         if(ApiResponse) setTimeout(resolve(ApiResponse),500);
         else reject('Api Response not Present!')
     }) 

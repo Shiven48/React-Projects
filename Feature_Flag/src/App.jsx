@@ -1,5 +1,5 @@
-import FeatureFlagGlobalContext from "./Components"
-import FeatureFlag from "./Components/Context"
+import FeatureFlag from "./Components/index.jsx"
+import FeatureFlagGlobalContext from "./Components/Context/index.jsx"
 
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <FeatureFlagGlobalContext>
-        <FeatureFlag />
+        <FeatureFlag/>
       </FeatureFlagGlobalContext>
     </>
   )

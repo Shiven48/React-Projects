@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {TabData} from "../TabData";
+import {TabData} from "./TabData.js";
 const Tabs = () => {
     
     const [currentTabIndex,setCurrentTabIndex] = useState(0)
