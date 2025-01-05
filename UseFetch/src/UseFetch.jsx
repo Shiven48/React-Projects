@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 
-const UseFetch = ({url,options = []}) => {
+export default function UseFetch(url,options = []) {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
@@ -26,13 +26,9 @@ const UseFetch = ({url,options = []}) => {
         } 
     }
 
-    console.log(data)
-
     if(loading){
         <div>Loading data! Please Wait.</div>
     }
-    
-    return [data,error,loading]
-}
 
-export default UseFetch;
+    return {data,error,loading};
+}

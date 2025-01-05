@@ -1,10 +1,9 @@
-import UseFetch from "./UseFetch"
-
+import UseFetchHookTest from "./Test"
 
 function App() {
   return (
     <>
-      <UseFetch url={`https://dummyjson.com/products?limit=20&skip=0`}/>
+      <UseFetchHookTest/>
     </>
   )
 }
